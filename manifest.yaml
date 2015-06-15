@@ -2,6 +2,28 @@
 ---
 containers:
 
+  - name: php5_fpm
+    image: sameersbn/php5-fpm
+    category: Low-Level
+    standalone: true
+    visible: true
+    tags:
+      - language
+      - php5
+    volumes:
+      - /var/run/php5-fpm
+
+  - name: nginx_server
+    icon: fa-php
+    image: sameersbn/nginx
+    standalone: true
+    visible: false
+    volumes:
+      - /etc/nginx/sites-enabled/
+    ports:
+      - 80
+      - 443
+      
   - name: mongodb_data
     image: aweber/mongodata
     standalone: true
